@@ -5,7 +5,7 @@ cmake ..
 cmake --build .
 
 Test:
---S0 100 --K 100 --r 0.05 --sigma 0.2 --T 1.0 --paths 50000 --steps 50 --put
+./lsm_price --S0 100 --K 100 --r 0.05 --sigma 0.2 --T 1.0 --paths 50000 --steps 50 --put
 
 Sample explanation:
 S0 = 100	Current stock price is 100
