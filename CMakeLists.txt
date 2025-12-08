@@ -9,6 +9,9 @@ if (NOT MSVC)
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# ---- Find MPI ----
+find_package(MPI REQUIRED)
+
 add_executable(lsm_price
     src/main.cpp
 )
@@ -16,3 +19,7 @@ add_executable(lsm_price
 target_include_directories(lsm_price PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
+
+# ---- Link MPI ----
+target_include_directories(lsm_price SYSTEM PRIVATE ${MPI_CXX_INCLUDE_DIRS})
+target_link_libraries(lsm_price PRIVATE MPI::MPI_CXX)
