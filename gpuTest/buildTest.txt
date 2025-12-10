@@ -1,0 +1,10 @@
+Build:
+export PATH=/usr/local/cuda-11.7/bin:${PATH}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64/:${LD_LIBRARY_PATH}
+source ~/.bashrc
+make
+./lsm_gpu --S0 100 --K 100 --r 0.05 --sigma 0.2 --T 1.0 --paths 50000 --steps 50 --type put
+
+result & analyzer:
+./runtest.sh
+python3 analyzer.py results_baseline.csv results_gpu.csv --out summary.csv
