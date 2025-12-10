@@ -3,7 +3,7 @@
 #include <string>
 #include <cstdlib>
 #include <algorithm>   // IMPORTANT: needed for std::find
-
+#include <chrono>
 // Find a flag in argv and extract the following argument as double
 double get_arg_double(char** begin, char** end, const std::string& flag, double default_val) {
     for (char** itr = begin; itr != end; ++itr) {
@@ -83,12 +83,18 @@ int main(int argc, char** argv) {
               << "  steps = " << cfg.num_steps << "\n"
               << "  deg   = " << cfg.poly_degree << "\n"
               << "  seed  = " << cfg.rng_seed << "\n"
-              << "  type  = " << (opt.is_call ? "American Call" : "American Put") << "\n"
+              << "  type  = " << (opt.is_call ? "call" : "put") << "\n"
               << std::endl;
 
     try {
+        auto t0 = std::chrono::high_resolution_clock::now();
         double price = price_american_lsm(model, opt, cfg);
+        auto t1 = std::chrono::high_resolution_clock::now();
+
+        double ms = std::chrono::duration<double, std::milli>(t1 - t0).count();
+
         std::cout << "Estimated American option price: " << price << std::endl;
+        std::cout << "CPU price = " << price << ", time = " << ms << " ms\n";
     } catch (const std::exception& e) {
         std::cerr << "Error during pricing: " << e.what() << std::endl;
         return 1;
