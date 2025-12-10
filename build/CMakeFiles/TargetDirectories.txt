@@ -1,3 +1,0 @@
-/afs/andrew.cmu.edu/usr7/rvincent/private/418/CMU-15418-Project-Longstaff-Schwartz-Solver/build/CMakeFiles/lsm_price.dir
-/afs/andrew.cmu.edu/usr7/rvincent/private/418/CMU-15418-Project-Longstaff-Schwartz-Solver/build/CMakeFiles/edit_cache.dir
-/afs/andrew.cmu.edu/usr7/rvincent/private/418/CMU-15418-Project-Longstaff-Schwartz-Solver/build/CMakeFiles/rebuild_cache.dir

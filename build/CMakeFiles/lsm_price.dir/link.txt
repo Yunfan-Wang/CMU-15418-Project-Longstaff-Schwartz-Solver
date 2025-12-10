@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/lsm_price.dir/src/main.cpp.o -o lsm_price  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
