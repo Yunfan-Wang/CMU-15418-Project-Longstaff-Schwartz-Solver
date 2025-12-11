@@ -1,18 +1,1 @@
-Make (start from /longstaff):
-mkdir build
-cd build
-cmake ..
-cmake --build .
-
-Test:
-./lsm_price --S0 100 --K 100 --r 0.05 --sigma 0.2 --T 1.0 --paths 50000 --steps 50 --put
-
-Sample explanation:
-S0 = 100	Current stock price is 100
-K = 100	Strike price is 100
-r = 5%	Risk-free interest rate is 5%
-sigma = 20%	Volatility of the stock is 20%
-T = 1.0	Option matures in 1 year
-paths = 50000	Monte Carlo uses 50k simulated stock paths
-steps = 50	Each path has 50 time points (discrete exercise opportunities)
---put	We are pricing a put (not a call)
+Each architecture has own buildTest.txt to follow, please follow and build inside the directory
